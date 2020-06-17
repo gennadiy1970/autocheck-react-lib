@@ -1,0 +1,43 @@
+.burgerBtn {
+  --s: 1rem;
+  margin: 0 1rem;
+  width: var(--s);
+  height: var(--s);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.burgerBtn__line {
+  --s: calc(1rem + 1px);
+  background: #fff;
+  height: calc(var(--s) / 5);
+  margin-bottom: calc(var(--s) / 5);
+  transition: all 0.3s ease-in-out;
+}
+
+.burgerBtn__top,
+.burgerBtn__center,
+.burgerBtn__bottom {
+  composes: burgerBtn__line;
+}
+.burgerBtn__top--click {
+  composes: burgerBtn__line;
+  transform-origin: center;
+  transform: translatey(200%) rotate(45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.burgerBtn__bottom--click {
+  composes: burgerBtn__line;
+  margin-bottom: 0;
+  transform-origin: center;
+  transform: translatey(-200%) rotate(-45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.burgerBtn__center--click {
+  composes: burgerBtn__line;
+  transform-origin: center;
+  transform: rotatey(90deg);
+  transition: all 0.3s ease-in-out;
+}
